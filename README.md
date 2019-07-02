@@ -1,6 +1,6 @@
 # JerseyStore
 
-> My excellent Nuxt.js project
+> My demo e-commerce Jersey store app using laravel API as backend
 
 ## Build Setup
 
@@ -11,12 +11,3 @@ $ npm install
 # serve with hot reload at localhost:3000
 $ npm run dev
 
-# build for production and launch server
-$ npm run build
-$ npm start
-
-# generate static project
-$ npm run generate
-```
-
-For detailed explanation on how things work, checkout [Nuxt.js docs](https://nuxtjs.org).
