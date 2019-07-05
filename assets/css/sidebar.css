@@ -1,0 +1,32 @@
+#sidebar{
+    left: -90%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    background: #ffffff;
+    z-index: 1000;
+    transition: 0.2s ease-in-out left
+}
+
+.side__Bar__logo{
+    background: #f56565;
+    height: 200px;
+    z-index: 1000;
+}
+.sidebar-slide{
+    left: 0% !important;
+    box-shadow: 1px 0px 148px -1px #000;
+}
+.mobile_link a {
+    display: block;
+    padding: 10px 20px
+}
+
+.mobile_link a:hover{
+    text-decoration: none
+}
+
+.mobile_link i {
+    color: #48bb78;
+    width: 30px
+}

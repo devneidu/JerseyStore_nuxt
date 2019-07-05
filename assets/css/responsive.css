@@ -1,0 +1,70 @@
+@media(max-width: 768px) {
+    
+    .cart-top{
+        display: flex
+    }
+    main{
+        padding: 0;
+        margin-top: 70px
+    }
+    #cat_section{
+        display: none
+    }
+    /* .store_card h6{
+        font-size: 0.67em
+    }
+    .store_card p{
+        font-size: 0.61em
+    } */
+    .store_card p:last-child{
+        display: none
+    }
+    .po__btn{
+        display: none
+    }
+    nav{
+        box-shadow: 0 0px 1px -1px rgba(0,0,0,.06), 0 1px 8px 0 rgba(0,0,0,.06), 0 1px 10px 0 rgba(0,0,0,.08);
+        -webkit-box-shadow: 0 0px 1px -1px rgba(0,0,0,.06), 0 1px 8px 0 rgba(0,0,0,.06), 0 1px 10px 0 rgba(0,0,0,.08);
+        -moz-box-shadow: 0 0px 1px -1px rgba(0,0,0,.06), 0 1px 8px 0 rgba(0,0,0,.06), 0 1px 10px 0 rgba(0,0,0,.08);
+        height: 53px;
+        line-height: 56px;
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 100;
+        padding-left: 1em;
+        padding-right: 1em;
+        display: flex;
+        display: -webkit-flex;
+    }
+    header{
+        display: none !important
+    }
+    #sidebar{
+        width: 60%;
+        left: -60%
+    }
+    .hidden-xs{
+        display: none !important
+    }
+    .visible-xs{
+        display: block !important
+    }
+}
+
+@media(max-width: 600px) {
+    #sidebar{
+        width: 80%;
+        left: -80%;
+    }
+}
+
+@media(max-width: 500px) {
+    .store_card h6{
+        font-size: 0.67em
+    }
+    .store_card p{
+        font-size: 0.61em
+    }
+}
