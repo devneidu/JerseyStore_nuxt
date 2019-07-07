@@ -5,13 +5,13 @@
         </div>
         <div class="side__bar__menu pt-4">
             <ul class="d-flex flex-column">
-                <li class="mobile_link"><nuxt-link to="" class="text-gray-700 b-6"><i class="fa fa-home"></i>Home</nuxt-link></li>
-                <li class="mobile_link"><nuxt-link to="" class="text-gray-700 b-6"><i class="fa fa-shopping-cart"></i>Shopping Cart <span class="float-right badge badge-dark t-nu/nuxt-link">20</span></nuxt-link></li>
-                <li class="mobile_link"><nuxt-link to="login" class="text-gray-700 b-6"><i class="fa fa-user"></i>Login</nuxt-link></li>
-                <li class="mobile_link"><nuxt-link to="register" class="text-gray-700 b-6"><i class="fa fa-user"></i>Register</nuxt-link></li>
-                <li class="mobile_link"><nuxt-link to="" class="text-gray-700 b-6"><i class="fa fa-user"></i>My Account</nuxt-link></li>
-                <li class="mobile_link"><nuxt-link to="" class="text-gray-700 b-6"><i class="fa fa-history"></i>Order History</nuxt-link></li>
-                <li class="mobile_link"><nuxt-link to="" class="text-gray-700 b-6"><i class="fa fa-sign-out-alt"></i>Logout</nuxt-link></li>
+                <li  @click="home" class="mobile_link"><span class="text-gray-700 b-6"><i class="fa fa-home"></i>Home</span></li>
+                <li @click="cart" class="mobile_link"><span class="text-gray-700 b-6"><i class="fa fa-shopping-cart"></i>Shopping Cart <span class="float-right badge badge-dark t-nu/span">20</span></span></li>
+                <li @click="login" class="mobile_link"><span class="text-gray-700 b-6"><i class="fa fa-user"></i>Login</span></li>
+                <li @click="register" class="mobile_link"><span class="text-gray-700 b-6"><i class="fa fa-user"></i>Register</span></li>
+                <li @click="details" class="mobile_link"><span class="text-gray-700 b-6"><i class="fa fa-user"></i>My Account</span></li>
+                <li @click="history" class="mobile_link"><span class="text-gray-700 b-6"><i class="fa fa-history"></i>Order History</span></li>
+                <li @click="logout" class="mobile_link"><span class="text-gray-700 b-6"><i class="fa fa-sign-out-alt"></i>Logout</span></li>
             </ul>
         </div>
     </div>
@@ -24,6 +24,36 @@ export default {
             required: true,
             type: Boolean
         }
+    },
+    methods: {
+        home(){
+            this.$parent.$emit('toggleSidebar')
+            this.$router.push('/')
+        },
+        login(){
+            this.$parent.$emit('toggleSidebar')
+            this.$router.push('/login')
+        },
+        register(){
+            this.$parent.$emit('toggleSidebar')
+            this.$router.push('/register')
+        },
+        details(){
+            this.$parent.$emit('toggleSidebar')
+            this.$router.push('/account/details')
+        },
+        history(){
+            this.$parent.$emit('toggleSidebar')
+            this.$router.push('/account/history')
+        },
+        logout(){
+            this.$parent.$emit('toggleSidebar')
+            this.$router.push('/logout')
+        },
+        cart(){
+            this.$parent.$emit('toggleSidebar')
+            this.$router.push('/cart')
+        },
     }
 }
 </script>

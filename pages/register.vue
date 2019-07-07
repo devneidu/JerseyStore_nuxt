@@ -1,6 +1,6 @@
 <template>
     <div>
-        <p class="t-13 bg-gray-100 text-center b-7 shadow-inner p-2">LOGIN TO YOUR ACCOUNT</p>
+        <p class="t-13 bg-gray-100 text-center b-7 shadow-inner p-2">CREATE AN ACCOUNT</p>
         <auth-form></auth-form>
     </div>
 </template>

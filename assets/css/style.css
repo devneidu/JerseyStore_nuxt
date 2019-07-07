@@ -388,3 +388,10 @@ footer{
 .hover-bg-green:hover{
     background: #0cf !important
 }
+.py-big{
+    padding: 200px 0
+}
+.nuxt-link-exact-active{
+    color: #e53e3e
+    /* c53030 */
+}

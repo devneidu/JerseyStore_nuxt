@@ -6,11 +6,14 @@
         <div class="store_link d-flex flex-row">
             <ul class="d-flex">
                 <li><nuxt-link class="store-link" to="/">Home</nuxt-link></li>
-                <li><nuxt-link class="store-link" to="login">Login</nuxt-link></li>
-                <li><nuxt-link class="store-link" to="register">Register</nuxt-link></li>
+                <li><nuxt-link class="store-link" to="/login">Login</nuxt-link></li>
+                <li><nuxt-link class="store-link" to="/register">Register</nuxt-link></li>
+                <li><nuxt-link class="store-link" to="/account/history">History</nuxt-link></li>
+                <li><nuxt-link class="store-link" to="/account/details">Profile</nuxt-link></li>
+                <li><nuxt-link class="store-link" to="/logout">Logout</nuxt-link></li>
             </ul>
             <ul>
-                <li><a href="" class="store-link text-red-500 m-0"><i class="fa fa-shopping-cart text-green-800"></i> <span class="t-1">(10)</span></a></li>
+                <li><nuxt-link to="/cart" class="store-link text-red-500 m-0"><i class="fa fa-shopping-cart text-green-800"></i> <span class="t-1">(10)</span></nuxt-link></li>
             </ul>
         </div>
     </header>

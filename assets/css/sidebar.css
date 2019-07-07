@@ -17,7 +17,7 @@
     left: 0% !important;
     box-shadow: 1px 0px 148px -1px #000;
 }
-.mobile_link a {
+.mobile_link{
     display: block;
     padding: 10px 20px
 }
