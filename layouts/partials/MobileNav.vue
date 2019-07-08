@@ -48,7 +48,8 @@ export default {
         },
         logout(){
             this.$parent.$emit('toggleSidebar')
-            this.$router.push('/logout')
+            this.$auth.logout()
+            this.toaster('success', 'Successfully logged out')
         },
         cart(){
             this.$parent.$emit('toggleSidebar')

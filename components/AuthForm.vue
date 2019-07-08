@@ -1,22 +1,27 @@
 <template>
-    <form>
+    <form @submit.prevent="[$route.path == '/login' ? login() : register()]">
         <div class="form-group" v-if="$route.path == '/register'">
-            <input type="text" class="form-control br-0 t-14" placeholder="Your Name" autocomplete="nope">
+            <input type="text" class="form-control br-0 t-14" :class="{'is-invalid': errors.name}" placeholder="Your Name"  autocomplete="nope" v-model="form.name">
+            <span v-if="errors.name" class="invalid-feedback">{{errors.name[0] }}</span>
         </div>
         <div class="form-group">
-            <input type="email" class="form-control br-0 t-14" placeholder="Your Email" autocomplete="nope">
+            <input type="email" class="form-control br-0 t-14" :class="{'is-invalid': errors.email}" placeholder="Your Email" v-model="form.email">
+            <span v-if="errors.email" class="invalid-feedback">{{errors.email[0] }}</span>
         </div>
         <div class="form-group" v-if="$route.path == '/register'">
-            <input type="text" class="form-control br-0 t-14" placeholder="Your Address" autocomplete="nope">
+            <input type="text" class="form-control br-0 t-14" :class="{'is-invalid': errors.address}" placeholder="Your Address" autocomplete="nope" v-model="form.address">
+            <span v-if="errors.address" class="invalid-feedback">{{errors.address[0] }}</span>
         </div>
         <div class="form-group" v-if="$route.path == '/register'">
-            <input type="text" class="form-control br-0 t-14" placeholder="Phone Number" autocomplete="nope">
+            <input type="text" class="form-control br-0 t-14" :class="{'is-invalid': errors.phone}" placeholder="Phone Number" autocomplete="nope" v-model="form.phone">
+            <span v-if="errors.phone" class="invalid-feedback">{{errors.phone[0] }}</span>
         </div>
         <div class="form-group">
-            <input type="password" class="form-control br-0 t-14" placeholder="Your Password" autocomplete="nope">
+            <input type="password" class="form-control br-0 t-14" :class="{'is-invalid': errors.password}" placeholder="Your Password" autocomplete="nope" v-model="form.password">
+            <span v-if="errors.password" class="invalid-feedback">{{errors.password[0] }}</span>
         </div>
         <div class="form-group">
-            <input type="submit" value="Login" class="btn btn-large bg-red-400 text-white hover-bg-red btn-block text-center br-0">
+            <input type="submit" :value="[$route.path == '/login' ? 'Login' : 'Register']" class="btn btn-large bg-red-400 text-white hover-bg-red btn-block text-center br-0">
         </div>
         <hr>
         <div class="text-center">
@@ -29,7 +34,43 @@
 
 <script>
 export default {
+    data() {
+        return {
+            form: {
+                name: '',
+                email: '',
+                address: '',
+                phone: '',
+                password: ''
+            }
+        }
+    },
+    methods: {
+        async login() {
+            await this.$auth.login({data: this.form})
 
+            setTimeout(() => {
+                this.$router.push('/') //Redirect
+            }, 1000);
+            
+        },
+        async register() {
+            try {
+               await this.$axios.post('/register', this.form)
+               this.toaster('success', 'Registration successfull')
+
+               this.$auth.login({data: this.form})
+
+               setTimeout(() => {
+                   this.$router.push('/') //Redirect
+               }, 2000);
+
+            } catch (error) {
+                
+            }
+        },
+    },
+    
 }
 </script>
 

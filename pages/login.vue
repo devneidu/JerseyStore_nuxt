@@ -8,9 +8,13 @@
 <script>
 import AuthForm from '@/components/AuthForm'
 export default {
+    middleware: 'Guest',
     layout: 'auth',
     components: {
         AuthForm
+    },
+    async fetch({store, app}) {
+        
     },
 }
 </script>

@@ -9,6 +9,7 @@
 import AuthForm from '@/components/AuthForm'
 export default {
     layout: 'auth',
+    middleware: 'Guest',
     components: {
         AuthForm
     },

@@ -17,9 +17,9 @@ module.exports = {
       { rel: 'stylesheet', href: 'https://use.fontawesome.com/releases/v5.6.3/css/all.css', integrity: 'sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/', crossorigin: 'anonymous'},
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=DM+Serif+Text&display=swap'},
     ],
-    // script: [
-    //   { src: '/js/ui.js', body: true },
-    // ]
+  },
+  router: {
+    middleware: 'ClearErrors'
   },
   /*
   ** Customize the progress-bar color
@@ -31,30 +31,51 @@ module.exports = {
   css: [
     '@/assets/css/style.css',
     '@/assets/css/responsive.css',
-    '@/assets/css/sidebar.css'
+    '@/assets/css/sidebar.css',
   ],
+  toast: {
+    position: 'bottom-center',
+    keepOnHover: true,
+    duration: 3000
+  },
   /*
   ** Plugins to load before mounting the App
   */
   plugins: [
-    // '@/plugins/ui.js'
+    '@/plugins/helpers/axios.js',
+    '@/plugins/mixins/getUser.js',
+    '@/plugins/mixins/getErrors.js',
+    '@/plugins/mixins/toaster.js',
   ],
-  /*
-  ** Nuxt.js modules
-  */
+
   modules: [
-    // Doc: https://bootstrap-vue.js.org/docs/
     'bootstrap-vue/nuxt',
-    // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
     '@nuxtjs/auth',
+    '@nuxtjs/toast',
   ],
-  /*
-  ** Axios module configuration
-  ** See https://axios.nuxtjs.org/options
-  */
+
   axios: {
+    baseURL: 'http://jersey.test/api'
+  },
+  auth: {
+    strategies: {
+      local: {
+        endpoints: {
+          login: { url: '/login', method: 'post', propertyName: 'token' },
+          logout: { url: '/logout', method: 'get' },
+          user: { url: '/user', method: 'get', propertyName: 'data' }
+        },
+      }
+    },
+    redirect: {
+      login: '/login',
+      home: '/'
+    },
+    plugins: [
+      './plugins/helpers/auth'
+    ]
   },
   /*
   ** Build configuration

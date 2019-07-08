@@ -1,0 +1,19 @@
+.b-toast-danger.b-toast-solid .toast{
+    background-color: #c53030 !important;
+    color: white !important;
+}
+
+.b-toast-danger .toast{
+    border-color: rgb(197, 48, 48) !important
+    /* #fc8181    */
+}
+
+.b-toast-success .toast{
+    border-color: #4CAF50 !important
+    /* #fc8181    */
+}
+
+.b-toast-success.b-toast-solid .toast{
+    background-color: #4CAF50 !important;
+    color: white !important;
+}
