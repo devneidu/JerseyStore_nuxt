@@ -7,7 +7,6 @@ export default function({$axios, store, app}) {
     })
 
     $axios.onResponse(response => {
-        console.log("object");
         return Promise.resolve(response)
     })
 

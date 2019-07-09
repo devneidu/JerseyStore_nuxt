@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="row m-0">
+    <div class="row m-0 pb-5">
             <div class="col-lg-3 col-md-4" id="cat_section">
                 <div class="shadow-sm bg-gray-100 text-center b-7 text-dark py-1">
                     Categories
@@ -13,107 +13,63 @@
                 </div>
             </div>
             <div class="col-lg-9 col-md-8 pl-lg-4">
-                <div class="row">
-                    <div class="col-xl-4 col-lg-4 col-md-6 col-6 mb-3">
-                        <div class="card border-0 shadow-sm store_card">
-                            <img src="/crystal_palace_home_jersey.png" alt="" class="img-fluid">
-                            <div class="card-body pb-1">
-                                <a href="https://ua.com" class="card-link text-gray-800 "><h6 class="b-6">Manchester United Away Jersey 2019</h6></a>
-                                <div class="d-flex justify-content-between">
-                                    <p class="text-red-600 t-1 b-9 align-item-center">$2000</p>
-                                    <p class="text-red-400 t-1 b-6">Out of stock</p>
-                                </div>
-                            </div>
-                            <span class="py-1 px-2 t-1 bg-green-500 text-white br-0 po__btn hover-bg-green">Add to cart</span>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-lg-4 col-md-6 col-6 mb-3">
-                        <div class="card border-0 shadow-sm store_card">
-                            <img src="/crystal_palace_home_jersey.png" alt="" class="img-fluid">
-                            <div class="card-body pb-1">
-                                <a href="https://ua.com" class="card-link text-gray-800 "><h6 class="b-6">Manchester United Away Jersey 2019</h6></a>
-                                <div class="d-flex justify-content-between">
-                                    <p class="text-red-600 t-1 b-9 align-item-center">$2000</p>
-                                    <p class="text-red-400 t-1 b-6">Out of stock</p>
-                                </div>
-                            </div>
-                            <span class="py-1 px-2 t-1 bg-green-500 text-white br-0 po__btn">Add to cart</span>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-lg-4 col-md-6 col-6 mb-3">
-                        <div class="card border-0 shadow-sm store_card">
-                            <img src="/crystal_palace_home_jersey.png" alt="" class="img-fluid">
-                            <div class="card-body pb-1">
-                                <a href="https://ua.com" class="card-link text-gray-800 "><h6 class="b-6">Manchester United Away Jersey 2019</h6></a>
-                                <div class="d-flex justify-content-between">
-                                    <p class="text-red-600 t-1 b-9 align-item-center">$2000</p>
-                                    <p class="text-red-400 t-1 b-6">Out of stock</p>
-                                </div>
-                            </div>
-                            <span class="py-1 px-2 t-1 bg-green-500 text-white br-0 po__btn">Add to cart</span>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-lg-4 col-md-6 col-6 mb-3">
-                        <div class="card border-0 shadow-sm store_card">
-                            <img src="/crystal_palace_home_jersey.png" alt="" class="img-fluid">
-                            <div class="card-body pb-1">
-                                <a href="https://ua.com" class="card-link text-gray-800 "><h6 class="b-6">Manchester United Away Jersey 2019</h6></a>
-                                <div class="d-flex justify-content-between">
-                                    <p class="text-red-600 t-1 b-9 align-item-center">$2000</p>
-                                    <p class="text-red-400 t-1 b-6">Out of stock</p>
-                                </div>
-                            </div>
-                            <span class="py-1 px-2 t-1 bg-green-500 text-white br-0 po__btn">Add to cart</span>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-lg-4 col-md-6 col-6 mb-3">
-                        <div class="card border-0 shadow-sm store_card">
-                            <img src="/crystal_palace_home_jersey.png" alt="" class="img-fluid">
-                            <div class="card-body pb-1">
-                                <a href="https://ua.com" class="card-link text-gray-800 "><h6 class="b-6">Manchester United Away Jersey 2019</h6></a>
-                                <div class="d-flex justify-content-between">
-                                    <p class="text-red-600 t-1 b-9 align-item-center">$2000</p>
-                                    <p class="text-red-400 t-1 b-6">Out of stock</p>
-                                </div>
-                            </div>
-                            <span class="py-1 px-2 t-1 bg-green-500 text-white br-0 po__btn">Add to cart</span>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-lg-4 col-md-6 col-6 mb-3">
-                        <div class="card border-0 shadow-sm store_card">
-                            <img src="/crystal_palace_home_jersey.png" alt="" class="img-fluid">
-                            <div class="card-body pb-1">
-                                <a href="https://ua.com" class="card-link text-gray-800 "><h6 class="b-6">Manchester United Away Jersey 2019</h6></a>
-                                <div class="d-flex justify-content-between">
-                                    <p class="text-red-600 t-1 b-9 align-item-center">$2000</p>
-                                    <p class="text-red-400 t-1 b-6">Out of stock</p>
-                                </div>
-                            </div>
-                            <span class="py-1 px-2 t-1 bg-green-500 text-white br-0 po__btn">Add to cart</span>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-lg-4 col-md-6 col-6 mb-3">
-                        <div class="card border-0 shadow-sm store_card">
-                            <img src="/crystal_palace_home_jersey.png" alt="" class="img-fluid">
-                            <div class="card-body pb-1">
-                                <a href="https://ua.com" class="card-link text-gray-800 "><h6 class="b-6">Manchester United Away Jersey 2019</h6></a>
-                                <div class="d-flex justify-content-between">
-                                    <p class="text-red-600 t-1 b-9 align-item-center">$2000</p>
-                                    <p class="text-red-400 t-1 b-6">Out of stock</p>
-                                </div>
-                            </div>
-                            <span class="py-1 px-2 t-1 bg-green-500 text-white br-0 po__btn">Add to cart</span>
-                        </div>
-                    </div>
-                </div>
+                <jersey-items :list="products"></jersey-items>
+                <no-ssr>
+                    <infinite-loading spinner="bubbles" @infinite="infiniteHandler">
+                        <div slot="no-results"></div>
+                    </infinite-loading>
+
+                </no-ssr>
             </div>
         </div>
   </div>
 </template>
 
 <script>
+import JerseyItems from '@/components/JerseyItems'
+import { mapGetters, mapState, mapActions } from 'vuex'
+import InfiniteLoading from 'vue-infinite-loading';
 export default {
-  
+    components: {
+        JerseyItems,
+        InfiniteLoading,
+    },
+    async fetch({$axios, store}) {
+        let a = 0;
+        await store.dispatch('products/fetchProducts')
+    },
+    computed: {
+        ...mapGetters({
+            products: 'products/products'
+        })
+    },
+    data() {
+        return {
+            list: [],
+        }
+    },
+    methods: {
+        infiniteHandler($state) {
+            this.$axios.get('/products', {
+                params: {
+                    page: this.list.length / 10 + 1,
+                },
+            }).then(({ data }) => {
+               setTimeout(() => {
+                    if (this.products.length < data.data.total) {
+                        this.list = this.list.concat(data.data.data);
+                        this.$store.dispatch('products/queryProducts', this.list)
+                        $state.loaded();
+                        if (this.products.length > data.data.total) {
+                            $state.complete();
+                        }
+                    } else {
+                        $state.complete();
+                    }
+               }, 2000);
+            });
+        },
+    }
 }
 </script>
 

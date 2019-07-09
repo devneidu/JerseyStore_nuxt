@@ -21,7 +21,7 @@
             <span v-if="errors.password" class="invalid-feedback">{{errors.password[0] }}</span>
         </div>
         <div class="form-group">
-            <input type="submit" :value="[$route.path == '/login' ? 'Login' : 'Register']" class="btn btn-large bg-red-400 text-white hover-bg-red btn-block text-center br-0">
+            <button type="submit" class="btn btn-large bg-red-400 text-white hover-bg-red btn-block text-center br-0"><span v-if="!isSubmit">{{$route.path == '/login' ? 'Login' : 'Register'}}</span><font-awesome-icon v-if="isSubmit" icon="spinner" class="fa-spin" /></button>
         </div>
         <hr>
         <div class="text-center">
@@ -42,21 +42,28 @@ export default {
                 address: '',
                 phone: '',
                 password: ''
-            }
+            },
+            isSubmit: false
         }
     },
     methods: {
         async login() {
-            await this.$auth.login({data: this.form})
-
-            setTimeout(() => {
-                this.$router.push('/') //Redirect
-            }, 1000);
+            this.isSubmit = true
+            
+            try {
+                await this.$auth.login({data: this.form})
+                setTimeout(() => {
+                    this.$router.push('/') //Redirect
+                }, 1000);
+            } catch (error) {
+                this.isSubmit = false
+            }
             
         },
         async register() {
+            this.isSubmit = true
             try {
-               await this.$axios.post('/register', this.form)
+                await this.$axios.post('/register', this.form)
                this.toaster('success', 'Registration successfull')
 
                this.$auth.login({data: this.form})
@@ -66,7 +73,7 @@ export default {
                }, 2000);
 
             } catch (error) {
-                
+                this.isSubmit = false
             }
         },
     },

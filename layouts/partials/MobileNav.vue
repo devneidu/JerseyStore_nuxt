@@ -5,13 +5,13 @@
         </div>
         <div class="side__bar__menu pt-4">
             <ul class="d-flex flex-column">
-                <li  @click="home" class="mobile_link"><span class="text-gray-700 b-6"><i class="fa fa-home"></i>Home</span></li>
+                <li @click="home" class="mobile_link"><span class="text-gray-700 b-6"><i class="fa fa-home"></i>Home</span></li>
                 <li @click="cart" class="mobile_link"><span class="text-gray-700 b-6"><i class="fa fa-shopping-cart"></i>Shopping Cart <span class="float-right badge badge-dark t-nu/span">20</span></span></li>
-                <li @click="login" class="mobile_link"><span class="text-gray-700 b-6"><i class="fa fa-user"></i>Login</span></li>
-                <li @click="register" class="mobile_link"><span class="text-gray-700 b-6"><i class="fa fa-user"></i>Register</span></li>
-                <li @click="details" class="mobile_link"><span class="text-gray-700 b-6"><i class="fa fa-user"></i>My Account</span></li>
-                <li @click="history" class="mobile_link"><span class="text-gray-700 b-6"><i class="fa fa-history"></i>Order History</span></li>
-                <li @click="logout" class="mobile_link"><span class="text-gray-700 b-6"><i class="fa fa-sign-out-alt"></i>Logout</span></li>
+                <li v-if="!authenticated" @click="login" class="mobile_link"><span class="text-gray-700 b-6"><i class="fa fa-user"></i>Login</span></li>
+                <li v-if="!authenticated" @click="register" class="mobile_link"><span class="text-gray-700 b-6"><i class="fa fa-user"></i>Register</span></li>
+                <li v-if="authenticated" @click="details" class="mobile_link"><span class="text-gray-700 b-6"><i class="fa fa-user"></i>My Account</span></li>
+                <li v-if="authenticated" @click="history" class="mobile_link"><span class="text-gray-700 b-6"><i class="fa fa-history"></i>Order History</span></li>
+                <li v-if="authenticated" @click="logout" class="mobile_link"><span class="text-gray-700 b-6"><i class="fa fa-sign-out-alt"></i>Logout</span></li>
             </ul>
         </div>
     </div>
