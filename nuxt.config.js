@@ -24,7 +24,10 @@ module.exports = {
   /*
   ** Customize the progress-bar color
   */
-  loading: { color: '#38a169' },
+  loading: {
+    color: '#48bb78',
+    height: '7px'
+  },
   /*
   ** Global CSS
   */
@@ -57,6 +60,7 @@ module.exports = {
     '@nuxtjs/pwa',
     '@nuxtjs/auth',
     '@nuxtjs/toast',
+    '@nuxtjs/dotenv'
     [
       'nuxt-fontawesome', {
         imports: [

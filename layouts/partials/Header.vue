@@ -10,7 +10,7 @@
                 <li v-if="!authenticated"><nuxt-link class="store-link" to="/register">Register</nuxt-link></li>
                 <li v-if="authenticated"><nuxt-link class="store-link" to="/account/details">Account</nuxt-link></li>
                 <li v-if="authenticated"><nuxt-link class="store-link" to="/account/history">History</nuxt-link></li>
-                <li v-if="authenticated"><nuxt-link class="store-link" to="/logout">Logout</nuxt-link></li>
+                <li v-if="authenticated"><a href="/logout" @click.prevent="logout" class="store-link">Logout</a></li>
             </ul>
             <ul>
                 <li><nuxt-link to="/cart" class="store-link text-red-500 m-0"><i class="fa fa-shopping-cart text-green-800"></i> <span class="t-1">({{ countCart }})</span></nuxt-link></li>
@@ -26,6 +26,16 @@ export default {
             required: true
         }
     },
+    methods: {
+        logout()  {
+
+            setTimeout(() => {
+                this.toaster('success', 'Logged out successfully')
+                this.$auth.logout()
+                this.$router.push('/')
+            }, 1500);
+        }
+    }
 }
 </script>
 

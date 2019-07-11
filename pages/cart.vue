@@ -19,7 +19,7 @@
                         <nuxt-link to="/" class="btn br-0 bg-gray-300  b-6 btn-block text-dark">Continue Shopping</nuxt-link>
                     </div>
                     <div class="col-lg-3 col-md-4 col-sm-5 mt-sm-0 mt-3">
-                        <button class="btn br-0 bg-green-500 b-6 btn-block text-white">Proceed to Checkout</button>
+                        <button class="btn br-0 bg-green-500 b-6 btn-block text-white" @click="checkout">Proceed to Checkout</button>
                     </div>
                 </div>
             </div>
@@ -41,6 +41,14 @@ export default {
         ...mapGetters({
         countCart: 'cart/countCart'
         })
+    },
+    methods: {
+        checkout() {
+            this.$nuxt.$loading.start()
+            setTimeout(() => {
+                this.$router.push('/checkout')
+            }, 4000)
+        }
     }
 }
 </script>
