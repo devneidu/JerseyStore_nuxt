@@ -43,6 +43,8 @@ module.exports = {
   */
   plugins: [
     '@/plugins/helpers/axios.js',
+    '@/plugins/helpers/approximate.js',
+    '@/plugins/helpers/money.js',
     '@/plugins/mixins/getUser.js',
     '@/plugins/mixins/getErrors.js',
     '@/plugins/mixins/toaster.js',

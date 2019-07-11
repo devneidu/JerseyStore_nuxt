@@ -10,12 +10,6 @@
     #cat_section{
         display: none
     }
-    /* .store_card h6{
-        font-size: 0.67em
-    }
-    .store_card p{
-        font-size: 0.61em
-    } */
     .store_card p:last-child{
         display: none
     }
@@ -57,6 +51,12 @@
     #sidebar{
         width: 80%;
         left: -80%;
+    }
+    .pro__x3__o  h3{
+        font-size: 1.4em
+    }
+    .pro__x3__o  h2{
+        font-size: 1.23em
     }
 }
 

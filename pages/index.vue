@@ -34,9 +34,12 @@ export default {
         JerseyItems,
         InfiniteLoading,
     },
-    async fetch({$axios, store}) {
-        let a = 0;
-        await store.dispatch('products/fetchProducts')
+    async fetch({$axios, store, error}) {
+        try{
+            await store.dispatch('products/fetchProducts')
+        } catch (err) {
+            error({statusCode: 500, message: 'Could not fetch data from server!!'})
+        }
     },
     computed: {
         ...mapGetters({

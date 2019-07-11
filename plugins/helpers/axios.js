@@ -1,9 +1,12 @@
 
-export default function({$axios, store, app}) {
+export default function({$axios, store, app, redirect, error}) {
     
     $axios.onRequest(response => {
         store.dispatch('validation/clearErrors')
         
+        if(store.getters['auth/authenticated']){
+            $axios.setToken(store.$auth.$storage._state['_token.local'])
+        }
     })
 
     $axios.onResponse(response => {
@@ -12,6 +15,7 @@ export default function({$axios, store, app}) {
 
     $axios.onError(err => {
         if(typeof(err.response) == 'undefined') {
+            error({ statusCode: 500, message: 'Could not fetch data from server' })
             toast('error', "No network available");
         }
 

@@ -1,7 +1,7 @@
 <template>
     <header class="justify-content-between flex-row bg-white">
         <div class="store_logo">
-            <img src="/logo_black.png" alt="Jersey store logo" class="i" height="100" width="100">
+            <nuxt-link to="/"><img src="/logo_black.png" alt="Jersey store logo" class="i" height="100" width="100"></nuxt-link>
         </div>
         <div class="store_link d-flex flex-row">
             <ul class="d-flex">
@@ -13,7 +13,7 @@
                 <li v-if="authenticated"><nuxt-link class="store-link" to="/logout">Logout</nuxt-link></li>
             </ul>
             <ul>
-                <li><nuxt-link to="/cart" class="store-link text-red-500 m-0"><i class="fa fa-shopping-cart text-green-800"></i> <span class="t-1">(10)</span></nuxt-link></li>
+                <li><nuxt-link to="/cart" class="store-link text-red-500 m-0"><i class="fa fa-shopping-cart text-green-800"></i> <span class="t-1">({{ countCart }})</span></nuxt-link></li>
             </ul>
         </div>
     </header>
@@ -21,7 +21,11 @@
 
 <script>
 export default {
-
+    props: {
+        countCart: {
+            required: true
+        }
+    },
 }
 </script>
 

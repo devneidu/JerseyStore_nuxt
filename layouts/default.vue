@@ -1,8 +1,8 @@
 <template>
   <div>
-    <MobileNav :toggleSideBar="isSideBarToggled"></MobileNav>
-    <MobileHeader></MobileHeader>
-    <AppHeader></AppHeader>
+    <MobileNav :countCart="countCart" :toggleSideBar="isSideBarToggled"></MobileNav>
+    <MobileHeader :countCart="countCart"></MobileHeader>
+    <AppHeader :countCart="countCart"></AppHeader>
     <main @click="action">
       <nuxt/>
     </main>
@@ -15,6 +15,7 @@ import AppFooter from './partials/Footer'
 import AppHeader from './partials/Header'
 import MobileNav from './partials/MobileNav'
 import MobileHeader from './partials/MobileHeader'
+import { mapGetters } from "vuex";
 export default {
   components: {
     AppFooter,
@@ -39,7 +40,11 @@ export default {
       }
     }
   },
-
+  computed: {
+    ...mapGetters({
+      countCart: 'cart/countCart'
+    })
+  }
 }
 </script>
 
