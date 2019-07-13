@@ -26,7 +26,7 @@
             </tbody>
         </table>
         <button class="btn br-0 btn-danger b-6 btn-block mt-4">Cancel</button>
-        <button class="btn br-0 btn-success b-6 btn-block mb-lg-0 mb-4 text-white">Pay</button>
+        <button class="btn br-0 btn-success b-6 btn-block mb-lg-0 mb-4 text-white" @click="pay">Pay</button>
     </div>
 </template>
 
@@ -44,10 +44,50 @@ export default {
         ...mapGetters({
             cartInstance: 'cart/cartInstance',
             totalAmount: 'cart/cartTotalAmount'
-        })
+        }),
+        total_quantity() {
+            let qty = this.cartInstance.reduce((zero, item) => {
+                return zero + parseInt(item.quantity)
+            }, 0)
+
+            return qty
+        },
+        total_amount() {
+            let amount = this.cartInstance.reduce((zero, item) => {
+                return zero + parseInt(item.price)
+            }, 0)
+
+            return amount
+        },
+        cart_object() {
+            let result = []
+            let cart = this.cartInstance.reduce((array, item) => {
+                let items = {
+                    id: item.id,
+                    price: item.price,
+                    quantity: item.quantity,
+                }
+                result.push(items)
+
+            }, [])
+
+            return result;
+        }
     },
     methods: {
-        
+        async pay() {
+            let payload = {
+                total_amount: this.total_amount,
+                quantity: this.total_quantity,
+                cart : this.cart_object
+            }
+            try {
+                let {data} = await this.$axios.post('checkout', payload)
+                this.paystack(this.total_amount, data.reference)
+            } catch (err) {
+                console.log(err);
+            }
+        }
     }
 }
 </script>

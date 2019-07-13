@@ -1,6 +1,7 @@
-
+const env = require('dotenv').config()
 module.exports = {
   mode: 'universal',
+  env: env.parsed,
   /*
   ** Headers of the page
   */
@@ -17,6 +18,9 @@ module.exports = {
       { rel: 'stylesheet', href: 'https://use.fontawesome.com/releases/v5.6.3/css/all.css', integrity: 'sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/', crossorigin: 'anonymous'},
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=DM+Serif+Text&display=swap'},
     ],
+    script: [
+      {src: 'https://js.paystack.co/v1/inline.js'},
+    ]
   },
   router: {
     middleware: 'ClearErrors'
@@ -48,6 +52,7 @@ module.exports = {
     '@/plugins/helpers/axios.js',
     '@/plugins/helpers/approximate.js',
     '@/plugins/helpers/money.js',
+    '@/plugins/mixins/paystack.js',
     '@/plugins/mixins/getUser.js',
     '@/plugins/mixins/getErrors.js',
     '@/plugins/mixins/toaster.js',
@@ -60,7 +65,7 @@ module.exports = {
     '@nuxtjs/pwa',
     '@nuxtjs/auth',
     '@nuxtjs/toast',
-    '@nuxtjs/dotenv'
+    // '@nuxtjs/dotenv'
     [
       'nuxt-fontawesome', {
         imports: [

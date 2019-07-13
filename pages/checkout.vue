@@ -16,16 +16,11 @@ import AccountDetails from '@/components/AccountDetails'
 import CheckoutProduct from '@/components/CheckoutProduct'
 export default {
     loading: false,
-    middleware: 'auth',
+    middleware: ['auth', 'EmptyCart'],
     components: {
         AccountDetails,
         CheckoutProduct
     },
-    created(){
-        setTimeout(() => {
-            this.$nuxt.$loading.finish()
-        }, 4000);
-    }
 }
 </script>
 

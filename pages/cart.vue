@@ -46,8 +46,9 @@ export default {
         checkout() {
             this.$nuxt.$loading.start()
             setTimeout(() => {
+                this.$nuxt.$loading.finish()
                 this.$router.push('/checkout')
-            }, 4000)
+            }, 2000)
         }
     }
 }
