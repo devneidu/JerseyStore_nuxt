@@ -31,7 +31,6 @@ export default {
                 //make post call  to the server with to verify payment 
                 //using transaction reference as post data
                 
-                console.log(response);
                 // $.post("verify.php", {reference:response.reference}, function(status){
                 //     if(status == "success")
                 //         //successful transaction

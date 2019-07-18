@@ -84,8 +84,10 @@ export default {
             try {
                 let {data} = await this.$axios.post('checkout', payload)
                 this.paystack(this.total_amount, data.reference)
+
+                alert(9)
             } catch (err) {
-                console.log(err);
+                
             }
         }
     }

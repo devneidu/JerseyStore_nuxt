@@ -38,6 +38,9 @@ export const mutations = {
     REMOVE_ITEM(state, id) {
         state.cart = state.cart.filter(item => item.id !== id);
         return state.cart
+    },
+    CLEAR_CART(state, payload){
+        state.cart = payload
     }
 }
 
@@ -53,5 +56,13 @@ export const actions = {
     },
     remove({commit}, id){
         commit('REMOVE_ITEM', id)
+    },
+    async cancel({commit}, reference){
+        await this.$axios.post('order/cancel', {reference: reference})
+        this.$router.push('/account/history')
+    },
+    async clearCart({commit}){
+        await commit('CLEAR_CART', [])
+        this.$router.push('/account/history')
     }
 }
